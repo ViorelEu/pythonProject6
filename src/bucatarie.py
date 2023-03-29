@@ -20,5 +20,5 @@ class Bucatarie:
             if ingredient not in self.inventar or self.inventar[ingredient]<cantitate:
                 raise   ValueError(f"{ingredient} insuficient")
             self.inventar[ingredient]-=cantitate
-            # with open('my_object.pickle', 'rb') as f:
-                # loaded_object = pickle.load(f)
+            with open('my_object.pickle', 'rb') as f:
+                loaded_object = pickle.load(f)
