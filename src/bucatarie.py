@@ -1,24 +1,35 @@
-import pickle
-
+from src.reteta import Reteta
 class Bucatarie:
-    def __init__(self,nume):
+    def __init__(self,nume,reteta):
         self.nume=nume
         self.inventar={}
+    def adauga_ingrediente(self,nume,cantitatea):
+        if nume  not in self.inventar.keys():
+            self.inventar[nume]= cantitatea
+        else:
+            self.inventar[nume]+= cantitatea
 
-    def adauga_ingredient(self,ingrediente):
-        for ingredient, cantitate in ingrediente.keys():
-            if ingredient in self.inventar:
-                self.inventar[ingredient] += cantitate
+    def scadere_ingrediente(self,nume,cantitatea):
+        if nume in self.inventar.keys():
+            if cantitatea <= self.inventar[nume]:
+                self.inventar[nume] -= cantitatea
             else:
-                self.inventar[ingredient]=cantitate
-            # with open('inventar.pickle', 'wb') as f:
-            #     pickle.dump(self.inventar, f)
+                raise Exception("Nu sunt destule ingrediente")
+
+    def creati_reteta(self):
+        self.reteta=[]
+        self.reteta.append()
+
+    def retete_disponibile(self):
 
 
-    def scade_ingrediente(self,ingrediente):
-        for ingredient,cantitate in ingrediente.keys():
-            if ingredient not in self.inventar or self.inventar[ingredient]<cantitate:
-                raise   ValueError(f"{ingredient} insuficient")
-            self.inventar[ingredient]-=cantitate
-            # with open('my_object.pickle', 'rb') as f:
-            #     loaded_object = pickle.load(f)
+
+
+
+
+
+
+
+
+
+
