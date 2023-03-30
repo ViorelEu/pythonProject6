@@ -16,11 +16,11 @@ class Bucatarie:
             else:
                 raise Exception("Nu sunt destule ingrediente")
 
-    def creati_reteta(self):
-        self.reteta=[]
-        self.reteta.append()
-
-    def retete_disponibile(self):
+    # def creati_reteta(self):
+    #     self.reteta=[]
+    #     self.reteta.append()
+    #
+    # def retete_disponibile(self):
 
 
 
